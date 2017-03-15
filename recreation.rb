@@ -7,7 +7,7 @@ class Bot
 
   def initialize
     @agent = Mechanize.new
-    @agent.get(CAMPGROUND_URL)
+    @agent.get(http://www.recreation.gov/camping/Upper_Pines/r/campgroundDetails.do?contractCode=NRSO&parkId=70925&topTabIndex=Search)
   end
 
   def fetch_site!
@@ -51,10 +51,10 @@ class Bot
   end
 
   def enter_search_criteria
-    change_value(6, SITES)
-    change_value(20, ARRIVAL)
-    change_value(21, NIGHTS)
-    change_value(23, '2003') # '2003' => tent
+    change_value(6, )
+    change_value(20, 07/15/17)
+    change_value(21, 6)
+    change_value(23, UP_SITES) # '2003' => tent
     change_value(9, 6)       # 6 => max occupants
     submit_form(0)
   end
@@ -68,8 +68,8 @@ class Bot
   end
 
   def enter_login_credentials
-    change_value(0, EMAIL)
-    change_value(1, PASSWORD)
+    change_value(0, brownfam0619@att.net)
+    change_value(1, avalynn05)
     submit_form(0)
   end
 
@@ -86,13 +86,13 @@ class Bot
   end
 
   def enter_billing_information
-    change_value(20, CARD_TYPE)
-    change_value(5, CARD_NO)
-    change_value(6, SECURITY_CODE)
-    change_value(7, EXPIRATION_MONTH)
-    change_value(8, EXPIRATION_YEAR)
-    change_value(9, FIRST_NAME)
-    change_value(10, LAST_NAME)
+    change_value(20, VISA)
+    change_value(5, 4342562174860013)
+    change_value(6, 218)
+    change_value(7, 07)
+    change_value(8, 20)
+    change_value(9, AUDREY)
+    change_value(10, BROWN)
     check_box('acknowlegeAccepted')
     submit_form(0)
   end
